@@ -1,2 +1,2 @@
 # pugazhdigi
-Puggazhdigi website AI
+Pugazhdigi website AI
