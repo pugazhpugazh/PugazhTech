@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development - PugazhTech</title>
+    <meta name="description"
+        content="PugazhTech's web development services - creating fast, responsive, and SEO-optimized websites. View our portfolio of client websites.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* ===== WEB DEVELOPMENT PAGE SPECIFIC STYLES ===== */
+        .webdev-hero {
+            background: linear-gradient(135deg, rgba(0, 40, 120, 0.88), rgba(0, 123, 255, 0.75)), url('images/Service bg.jpg') no-repeat center center/cover;
+            padding: 160px 0 100px;
+            text-align: center;
+            color: var(--white-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .webdev-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(0, 123, 255, 0.1) 0%, transparent 40%);
+            animation: heroFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes heroFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            33% {
+                transform: translate(20px, -20px) rotate(2deg);
+            }
+
+            66% {
+                transform: translate(-15px, 15px) rotate(-1deg);
+            }
+        }
+
+        .webdev-hero .banner-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .webdev-hero .banner-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, #a3d8ff, #ffffff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGradient 5s linear infinite;
+        }
+
+        .webdev-hero .banner-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .webdev-hero .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .webdev-hero .stat-item {
+            text-align: center;
+        }
+
+        .webdev-hero .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .webdev-hero .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Service Highlights */
+        .service-highlights {
+            position: relative;
+            background: var(--light-color);
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .highlight-card {
+            background: var(--white-color);
+            border-radius: var(--border-radius-lg);
+            padding: 35px 30px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), #00d4ff);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .highlight-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--box-shadow-lg);
+        }
+
+        .highlight-card .card-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-light), rgba(0, 123, 255, 0.15));
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 26px;
+            transition: all 0.4s ease;
+        }
+
+        .highlight-card:hover .card-icon {
+            background: linear-gradient(135deg, var(--primary-color), #0056b3);
+            color: var(--white-color);
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.35);
+        }
+
+        .highlight-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .highlight-card:hover h3 {
+            color: var(--primary-color);
+        }
+
+        .highlight-card p {
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* Portfolio Showcase Section */
+        .portfolio-showcase {
+            position: relative;
+            overflow: hidden;
+            background: var(--light-color);
+        }
+
+        .portfolio-showcase::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -120px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 123, 255, 0.06) 0%, transparent 70%);
+        }
+
+        .portfolio-showcase::after {
+            content: '';
+            position: absolute;
+            bottom: -120px;
+            left: -120px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 123, 255, 0.06) 0%, transparent 70%);
+        }
+
+        /* Client Tab Buttons */
+        .client-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .client-tab {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: var(--white-color);
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: var(--body-font);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--dark-color);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .client-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 123, 255, 0.05), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .client-tab:hover::before {
+            left: 100%;
+        }
+
+        .client-tab i {
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .client-tab:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.15);
+        }
+
+        .client-tab.active {
+            background: linear-gradient(135deg, var(--primary-color), #0056b3);
+            color: var(--white-color);
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.35);
+        }
+
+        .client-tab.active i {
+            color: var(--white-color);
+        }
+
+        /* Desktop Browser Frame */
+        .desktop-frame {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .browser-window {
+            background: var(--white-color);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.4s ease;
+        }
+
+        .browser-window:hover {
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Browser Top Bar */
+        .browser-topbar {
+            background: linear-gradient(180deg, #f8f9fa, #e9ecef);
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            border-bottom: 1px solid #dee2e6;
+            position: relative;
+        }
+
+        .browser-dots {
+            display: flex;
+            gap: 7px;
+            flex-shrink: 0;
+        }
+
+        .browser-dots span {
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            display: block;
+        }
+
+        .browser-dots span:nth-child(1) {
+            background: #ff5f57;
+            box-shadow: 0 0 3px rgba(255, 95, 87, 0.4);
+        }
+
+        .browser-dots span:nth-child(2) {
+            background: #ffbd2e;
+            box-shadow: 0 0 3px rgba(255, 189, 46, 0.4);
+        }
+
+        .browser-dots span:nth-child(3) {
+            background: #28c840;
+            box-shadow: 0 0 3px rgba(40, 200, 64, 0.4);
+        }
+
+        .browser-url-bar {
+            flex: 1;
+            background: var(--white-color);
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 7px 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            color: var(--secondary-color);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .browser-url-bar i {
+            color: #28c840;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .browser-url-bar span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: color 0.3s ease;
+        }
+
+        /* Iframe Display */
+        .browser-viewport {
+            position: relative;
+            width: 100%;
+            height: 520px;
+            overflow: hidden;
+            background: #f8f9fa;
+        }
+
+        .browser-viewport iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .browser-viewport iframe.active-frame {
+            opacity: 1;
+            pointer-events: auto;
+            z-index: 1;
+        }
+
+        /* Client Info Bar below browser */
+        .client-info-bar {
+            max-width: 1000px;
+            margin: 30px auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .client-name-display {
+            text-align: center;
+        }
+
+        .client-name-display h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 8px;
+            position: relative;
+            display: inline-block;
+            transition: all 0.4s ease;
+        }
+
+        .client-name-display h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), #00d4ff);
+            border-radius: 2px;
+            transition: width 0.4s ease;
+        }
+
+        .client-name-display:hover h2::after {
+            width: 80px;
+        }
+
+        .industry-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, var(--primary-light), rgba(0, 123, 255, 0.12));
+            color: var(--primary-color);
+            border-radius: 25px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 123, 255, 0.15);
+        }
+
+        .industry-badge i {
+            font-size: 1rem;
+        }
+
+        .client-visit-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            background: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.25);
+        }
+
+        .client-visit-link:hover {
+            background: var(--primary-dark);
+            color: var(--white-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.35);
+        }
+
+        .client-visit-link i {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .client-visit-link:hover i {
+            transform: translateX(4px);
+        }
+
+        /* Fade animation for info changes */
+        .fade-in {
+            animation: infoFadeIn 0.4s ease forwards;
+        }
+
+        @keyframes infoFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Tech Stack Section */
+        .tech-stack {
+            background: var(--white-color);
+        }
+
+        .tech-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .tech-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--light-color);
+            padding: 14px 24px;
+            border-radius: 50px;
+            box-shadow: var(--box-shadow);
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+
+        .tech-badge i {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+
+        .tech-badge:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--box-shadow-lg);
+            background: var(--primary-color);
+            color: var(--white-color);
+        }
+
+        .tech-badge:hover i {
+            color: var(--white-color);
+        }
+
+        /* Process Section */
+        .process-section {
+            position: relative;
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            position: relative;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 45px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-light), var(--primary-color), var(--primary-light));
+            z-index: 0;
+        }
+
+        .process-step {
+            background: var(--white-color);
+            border-radius: var(--border-radius-lg);
+            padding: 30px 25px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--box-shadow-lg);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), #0056b3);
+            color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0 auto 18px;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        .process-step h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .process-step p {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 992px) {
+            .webdev-hero .banner-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .webdev-hero .hero-stats {
+                gap: 30px;
+            }
+
+            .process-timeline::before {
+                display: none;
+            }
+
+            .browser-viewport {
+                height: 420px;
+            }
+
+            .client-tabs {
+                gap: 10px;
+            }
+
+            .client-tab {
+                padding: 12px 22px;
+                font-size: 0.88rem;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .webdev-hero {
+                padding: 130px 0 70px;
+            }
+
+            .webdev-hero .banner-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .webdev-hero .stat-number {
+                font-size: 2rem;
+            }
+
+            .browser-viewport {
+                height: 320px;
+            }
+
+            .client-tab {
+                padding: 10px 18px;
+                font-size: 0.85rem;
+                gap: 6px;
+            }
+
+            .client-info-bar {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .browser-viewport {
+                height: 250px;
+            }
+
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .client-tab {
+                padding: 10px 16px;
+                font-size: 0.82rem;
+            }
+
+            .client-name-display h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/pugazhtech logo.png" alt="Pugazhtech">
+                    </a>
+                </div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html" class="active">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section id="webdev-hero" class="webdev-hero">
+        <div class="container">
+            <div class="banner-content" data-aos="fade-up">
+                <h1>Web Development</h1>
+                <p>We craft fast, responsive, and SEO-optimized websites that turn visitors into customers. Explore our
+                    latest client projects below.</p>
+                <a href="contact.html" class="btn btn-secondary">Start Your Project</a>
+            </div>
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Projects Delivered</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Client Satisfaction</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Support Available</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Highlights -->
+    <section id="service-highlights" class="service-highlights section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Why Our Web Development Stands Out</h2>
+                <p>We combine aesthetics with performance to deliver websites that drive results</p>
+            </div>
+            <div class="highlights-grid">
+                <div class="highlight-card" data-aos="fade-up">
+                    <div class="card-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Pixel-perfect layouts that look stunning on every device — mobile, tablet, and desktop.</p>
+                </div>
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Blazing Fast Speed</h3>
+                    <p>Optimized for performance with best practices to ensure lightning-fast load times.</p>
+                </div>
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO Optimized</h3>
+                    <p>Built with search engine best practices to help your website rank higher on Google.</p>
+                </div>
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure & Reliable</h3>
+                    <p>Enterprise-grade security with SSL, regular updates, and reliable hosting solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Showcase – Single Desktop Frame -->
+    <section id="portfolio-showcase" class="portfolio-showcase section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our Recent Projects</h2>
+                <p>Real websites we've built for real clients — click a project to see it live</p>
+            </div>
+
+            <!-- Client Tab Buttons -->
+            <div class="client-tabs" data-aos="fade-up">
+                <button class="client-tab active" data-index="0" onclick="switchClient(0)">
+                    <i class="fas fa-building"></i> Anand Homes
+                </button>
+                <button class="client-tab" data-index="1" onclick="switchClient(1)">
+                    <i class="fas fa-hands-helping"></i> Uthavum Ullangal Trust
+                </button>
+                <button class="client-tab" data-index="2" onclick="switchClient(2)">
+                    <i class="fas fa-truck"></i> VG Logistics
+                </button>
+            </div>
+
+            <!-- Desktop Browser Frame -->
+            <div class="desktop-frame" data-aos="fade-up">
+                <div class="browser-window">
+                    <!-- Browser Top Bar -->
+                    <div class="browser-topbar">
+                        <div class="browser-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="browser-url-bar">
+                            <i class="fas fa-lock"></i>
+                            <span id="url-display">https://anandhomes.co.in</span>
+                        </div>
+                    </div>
+                    <!-- Iframe Viewport -->
+                    <div class="browser-viewport">
+                        <iframe id="frame-0" class="active-frame" src="https://anandhomes.co.in"
+                            title="Anand Homes Website" sandbox="allow-scripts allow-same-origin"></iframe>
+                        <iframe id="frame-1" src="https://uthavumullangaltrust.org"
+                            title="Uthavum Ullangal Trust Website" sandbox="allow-scripts allow-same-origin"></iframe>
+                        <iframe id="frame-2" src="https://vglogistics.netlify.app" title="VG Logistics Website"
+                            sandbox="allow-scripts allow-same-origin"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Client Info Below Frame -->
+            <div class="client-info-bar" data-aos="fade-up">
+                <div class="client-name-display">
+                    <h2 id="client-name">Anand Homes</h2>
+                </div>
+                <span class="industry-badge" id="industry-badge">
+                    <i class="fas fa-building" id="industry-icon"></i>
+                    <span id="industry-text">Real Estate</span>
+                </span>
+                <a href="https://anandhomes.co.in" target="_blank" rel="noopener noreferrer" class="client-visit-link"
+                    id="visit-link">
+                    Visit Website <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Switcher Script -->
+    <script>
+        const clients = [
+            {
+                name: 'Anand Homes',
+                url: 'https://anandhomes.co.in',
+                industry: 'Real Estate',
+                icon: 'fas fa-building'
+            },
+            {
+                name: 'Uthavum Ullangal Trust',
+                url: 'https://uthavumullangaltrust.org',
+                industry: 'Non-Profit Organization',
+                icon: 'fas fa-hands-helping'
+            },
+            {
+                name: 'VG Logistics',
+                url: 'https://vglogistics.netlify.app',
+                industry: 'Logistics & Transportation',
+                icon: 'fas fa-truck'
+            }
+        ];
+
+        let currentIndex = 0;
+
+        function switchClient(index) {
+            if (index === currentIndex) return;
+            currentIndex = index;
+
+            const client = clients[index];
+
+            // Update tabs
+            document.querySelectorAll('.client-tab').forEach((tab, i) => {
+                tab.classList.toggle('active', i === index);
+            });
+
+            // Update iframes
+            document.querySelectorAll('.browser-viewport iframe').forEach((frame, i) => {
+                frame.classList.toggle('active-frame', i === index);
+            });
+
+            // Update URL bar
+            document.getElementById('url-display').textContent = client.url;
+
+            // Update client name with animation
+            const nameEl = document.getElementById('client-name');
+            nameEl.classList.remove('fade-in');
+            void nameEl.offsetWidth; // trigger reflow
+            nameEl.textContent = client.name;
+            nameEl.classList.add('fade-in');
+
+            // Update industry badge with animation
+            const badgeEl = document.getElementById('industry-badge');
+            badgeEl.classList.remove('fade-in');
+            void badgeEl.offsetWidth;
+            document.getElementById('industry-icon').className = client.icon;
+            document.getElementById('industry-text').textContent = client.industry;
+            badgeEl.classList.add('fade-in');
+
+            // Update visit link
+            const visitLink = document.getElementById('visit-link');
+            visitLink.href = client.url;
+        }
+    </script>
+
+    <!-- Our Process -->
+    <section id="our-process" class="process-section section-padding bg-light">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our Development Process</h2>
+                <p>A streamlined workflow to bring your vision to life</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step" data-aos="fade-up">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>Understanding your goals, audience, and brand identity</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">2</div>
+                    <h3>Design</h3>
+                    <p>Creating wireframes and stunning UI mockups for approval</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">3</div>
+                    <h3>Develop</h3>
+                    <p>Building with clean code, responsiveness, and SEO in mind</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">4</div>
+                    <h3>Launch</h3>
+                    <p>Testing, deploying, and providing ongoing support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="tech-stack" class="tech-stack section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Technologies We Use</h2>
+                <p>Modern tools and frameworks for robust web solutions</p>
+            </div>
+            <div class="tech-grid" data-aos="fade-up" data-aos-delay="100">
+                <div class="tech-badge"><i class="fab fa-html5"></i> HTML5</div>
+                <div class="tech-badge"><i class="fab fa-css3-alt"></i> CSS3</div>
+                <div class="tech-badge"><i class="fab fa-js-square"></i> JavaScript</div>
+                <div class="tech-badge"><i class="fab fa-react"></i> React</div>
+                <div class="tech-badge"><i class="fab fa-node-js"></i> Node.js</div>
+                <div class="tech-badge"><i class="fab fa-wordpress"></i> WordPress</div>
+                <div class="tech-badge"><i class="fab fa-shopify"></i> Shopify</div>
+                <div class="tech-badge"><i class="fas fa-database"></i> MongoDB</div>
+                <div class="tech-badge"><i class="fab fa-figma"></i> Figma</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="cta section-padding bg-primary">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Ready to Build Your Dream Website?</h2>
+                <p>Let's create a stunning, high-performing website that drives real business results.</p>
+                <a href="contact.html" class="btn btn-light">Get a Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/pugazhtech logo.png" alt="Pugazhtech Logo">
+                    <p>Result-driven Digital Solutions for the Future</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
+                        <li><a href="web-development.html">Website Development</a></li>
+                        <li><a href="services.html#ai-agent">AI Agent Development</a></li>
+                        <li><a href="services.html#ai-automation">AI Automation</a></li>
+                        <li><a href="services.html#seo">SEO & Performance</a></li>
+                    </ul>
+                </div>
+
+                <!-- Footer -->
+
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> KVM Center, Padur - 603 103</li>
+                        <li><i class="fas fa-phone"></i> +91 801 550 1875</li>
+                        <li><i class="fas fa-envelope"></i> pugazhrnthicr7@gmail.com</li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/pugazhenthi-v-k-821392296/" target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/pugazh_ronaldo/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pugazhtech. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
